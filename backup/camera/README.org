@@ -1,0 +1,24 @@
+* Raspberry Camera
+  a copy of [[https://github.com/jacksonliam/mjpg-streamer]]
+* Install
+** Raspberry
+#+BEGIN_SRC bash
+$ unzip mjpg-streamer-master.zip
+$ sudo apt-get install cmake
+$ sudo apt-get install libjpeg8-dev
+$ cd mjpg-streamer-experimental
+$ make clean all
+#+END_SRC
+enable camera
+#+BEGIN_SRC bash
+sudo raspi-config
+#+END_SRC
+* Usage
+** Raspberry
+#+BEGIN_SRC bash
+$ cd mjpg-streamer-experimental
+$ ./mjpg_streamer -i "./input_raspicam.so" -o "./output_http.so -w ./www"
+#+END_SRC
+** Your Browser
+[[http://<RaspberryIP>:8080/?action=stream]] (moving images)
+[[http://<RaspberryIP>:8080/javascript_simple.html ]] (still images)
